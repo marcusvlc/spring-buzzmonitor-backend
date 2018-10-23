@@ -12,10 +12,9 @@ public class FacebookAuthController  {
 
     public static Facebook facebook;
     private ConnectionRepository connectionRepository;
-//    private CommentOperations commentOp;
 
     public FacebookAuthController(Facebook facebook, ConnectionRepository connectionRepository) {
-        this.facebook = facebook;
+        FacebookAuthController.facebook = facebook;
         this.connectionRepository = connectionRepository;
     }
     

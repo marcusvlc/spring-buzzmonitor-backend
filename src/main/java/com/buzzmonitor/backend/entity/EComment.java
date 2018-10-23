@@ -3,13 +3,16 @@ package com.buzzmonitor.backend.entity;
 import java.util.Date;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
 /**
  * https://docs.spring.io/spring-social-facebook/docs/2.0.3.RELEASE/apidocs/org/springframework/social/facebook/api/Comment.html
  */
-public class Comment {
+
+@Document(indexName="comment", type="comment")
+public class EComment {
 
 	@Id
 	private String id;
@@ -18,12 +21,12 @@ public class Comment {
 	@Field(type = FieldType.Date)
 	private Date createdTime;
 
-	private User user;
+	private EUser user;
 
-	public Comment() {
+	public EComment() {
 	}
 
-	public Comment(String id, String message, Date createdTime, User user) {
+	public EComment(String id, String message, Date createdTime, EUser user) {
 		this.id = id;
 		this.message = message;
 		this.createdTime = createdTime;
@@ -54,11 +57,11 @@ public class Comment {
 		this.createdTime = createdTime;
 	}
 
-	public User getUser() {
+	public EUser getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(EUser user) {
 		this.user = user;
 	}
 

@@ -12,7 +12,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
  * https://docs.spring.io/spring-social-facebook/docs/2.0.3.RELEASE/apidocs/org/springframework/social/facebook/api/User.html
  */
 @Document(indexName = "user", type = "default")
-public class User {
+public class EUser {
 
 	@Id
 	private String id;
@@ -21,14 +21,20 @@ public class User {
 
 	@Field(type = FieldType.Date)
 	private Date updatedTime;
+	
+	private String gender;
+	
+	private String email;
 
-	public User() {
+	public EUser() {
 	}
 
-	public User(String id, String name, Date updatedTime) {
+	public EUser(String id, String name, Date updatedTime, String gender, String email) {
 		this.id = id;
 		this.name = name;
 		this.updatedTime = updatedTime;
+		this.email = email;
+		this.gender = gender;
 	}
 
 	public String getId() {
@@ -54,5 +60,23 @@ public class User {
 	public void setUpdatedTime(Date updatedTime) {
 		this.updatedTime = updatedTime;
 	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
+	
 
 }
