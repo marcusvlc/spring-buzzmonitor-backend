@@ -1,3 +1,5 @@
+- Projeto desenvolvido por Marcus Vinicius, estudante da UFCG (Universidade Federal de Campina Grande) como desafio proposto pela BuzzMonitor.
+
 - Como usar
 
 1) Suba o servidor do Spring, tendo o elasticsearch na versao 2.x rodando em seu computador.
